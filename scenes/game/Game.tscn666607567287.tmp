@@ -1,0 +1,253 @@
+[gd_scene load_steps=9 format=3 uid="uid://dalvfnov2ethx"]
+
+[ext_resource type="Script" uid="uid://dpsljbpakv6c2" path="res://scenes/game/game.gd" id="1_vrspl"]
+[ext_resource type="PackedScene" uid="uid://c3c6kfn0562kw" path="res://entities/shield/Shield.tscn" id="2_7qcb4"]
+[ext_resource type="PackedScene" uid="uid://8cqbmv244mu8" path="res://entities/ship/Ship.tscn" id="2_lyhax"]
+[ext_resource type="PackedScene" uid="uid://deg7173fs7csd" path="res://entities/player/Player.tscn" id="2_vrspl"]
+[ext_resource type="PackedScene" uid="uid://cc4f4t6j110p2" path="res://entities/alien/Alien.tscn" id="3_7qcb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrspl"]
+size = Vector2(96, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m44fu"]
+size = Vector2(154, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qcb4"]
+size = Vector2(552, 43)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_vrspl")
+metadata/_edit_vertical_guides_ = [153.0, 650.0]
+
+[node name="Background1" type="ColorRect" parent="."]
+offset_right = 797.0
+offset_bottom = 602.0
+color = Color(0, 0, 0, 1)
+
+[node name="ShipGroup" type="Node2D" parent="."]
+
+[node name="Ship" parent="ShipGroup" instance=ExtResource("2_lyhax")]
+
+[node name="LeftWall" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_right = 151.0
+offset_bottom = 602.0
+color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -118.0
+offset_top = 42.0
+offset_right = -78.0
+offset_bottom = 82.0
+
+[node name="RightWall" type="ColorRect" parent="."]
+offset_left = 650.0
+offset_top = 1.0
+offset_right = 800.0
+offset_bottom = 603.0
+color = Color(0.529412, 0.529412, 0.529412, 1)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 5.0
+offset_right = 644.0
+offset_bottom = 31.0
+text = "Score"
+
+[node name="ShieldGroup" type="Node2D" parent="."]
+
+[node name="Shield" parent="ShieldGroup" instance=ExtResource("2_7qcb4")]
+position = Vector2(565, 447)
+
+[node name="Shield2" parent="ShieldGroup" instance=ExtResource("2_7qcb4")]
+position = Vector2(452, 449)
+
+[node name="Shield3" parent="ShieldGroup" instance=ExtResource("2_7qcb4")]
+position = Vector2(334, 449)
+
+[node name="Shield4" parent="ShieldGroup" instance=ExtResource("2_7qcb4")]
+position = Vector2(229, 450)
+
+[node name="Aliens" type="Node2D" parent="."]
+
+[node name="Alien" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(208, 128)
+
+[node name="Alien2" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(488, 128)
+
+[node name="Alien9" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(528, 128)
+
+[node name="Alien10" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(568, 128)
+
+[node name="Alien3" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(448, 128)
+
+[node name="Alien4" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(408, 128)
+
+[node name="Alien5" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(368, 128)
+
+[node name="Alien6" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(328, 128)
+
+[node name="Alien7" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(288, 128)
+
+[node name="Alien8" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(248, 128)
+
+[node name="Alien11" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(208, 168)
+
+[node name="Alien12" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(488, 168)
+
+[node name="Alien13" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(528, 168)
+
+[node name="Alien14" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(568, 168)
+
+[node name="Alien15" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(448, 168)
+
+[node name="Alien16" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(408, 168)
+
+[node name="Alien17" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(368, 168)
+
+[node name="Alien18" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(328, 168)
+
+[node name="Alien19" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(288, 168)
+
+[node name="Alien20" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(248, 168)
+
+[node name="Alien21" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(208, 208)
+
+[node name="Alien22" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(488, 208)
+
+[node name="Alien23" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(528, 208)
+
+[node name="Alien24" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(568, 208)
+
+[node name="Alien25" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(448, 208)
+
+[node name="Alien26" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(408, 208)
+
+[node name="Alien27" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(368, 208)
+
+[node name="Alien28" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(328, 208)
+
+[node name="Alien29" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(288, 208)
+
+[node name="Alien30" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(248, 208)
+
+[node name="Alien31" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(208, 248)
+
+[node name="Alien32" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(488, 248)
+
+[node name="Alien33" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(528, 248)
+
+[node name="Alien34" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(568, 248)
+
+[node name="Alien35" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(448, 248)
+
+[node name="Alien36" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(408, 248)
+
+[node name="Alien37" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(368, 248)
+
+[node name="Alien38" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(328, 248)
+
+[node name="Alien39" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(288, 248)
+
+[node name="Alien40" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(248, 248)
+
+[node name="Alien41" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(208, 288)
+
+[node name="Alien42" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(488, 288)
+
+[node name="Alien43" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(528, 288)
+
+[node name="Alien44" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(568, 288)
+
+[node name="Alien45" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(448, 288)
+
+[node name="Alien46" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(408, 288)
+
+[node name="Alien47" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(368, 288)
+
+[node name="Alien48" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(328, 288)
+
+[node name="Alien49" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(288, 288)
+
+[node name="Alien50" parent="Aliens" instance=ExtResource("3_7qcb4")]
+position = Vector2(248, 288)
+
+[node name="Player" parent="." instance=ExtResource("2_vrspl")]
+position = Vector2(307, 553)
+
+[node name="LeftWallBody" type="StaticBody2D" parent="."]
+
+[node name="LeftWallCollider" type="CollisionShape2D" parent="LeftWallBody"]
+position = Vector2(693, 530.5)
+shape = SubResource("RectangleShape2D_vrspl")
+
+[node name="RightWallBody" type="StaticBody2D" parent="."]
+
+[node name="RightWallCollider" type="CollisionShape2D" parent="RightWallBody"]
+position = Vector2(78, 530)
+shape = SubResource("RectangleShape2D_m44fu")
+
+[node name="BulletCollector" type="Area2D" parent="."]
+position = Vector2(-13, 13)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCollector"]
+position = Vector2(410, -34)
+shape = SubResource("RectangleShape2D_7qcb4")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.9
+autostart = true
+
+[node name="ShipTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

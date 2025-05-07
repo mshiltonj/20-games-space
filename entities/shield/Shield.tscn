@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3c6kfn0562kw"]
+
+[ext_resource type="PackedScene" uid="uid://g6sktfq5r3rj" path="res://entities/shield/ShieldPart.tscn" id="2_1rpqi"]
+
+[node name="Shield" type="Node2D" groups=["shields"]]
+metadata/_edit_horizontal_guides_ = [-32.0]
+
+[node name="ShieldPart2" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-12, 16)
+
+[node name="ShieldPart3" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(4, -12)
+
+[node name="ShieldPart4" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(12, -12)
+
+[node name="ShieldPart5" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-4, -12)
+
+[node name="ShieldPart6" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-12, -12)
+
+[node name="ShieldPart7" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(12, 2)
+
+[node name="ShieldPart8" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(4, 2)
+
+[node name="ShieldPart9" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-4, 2)
+
+[node name="ShieldPart10" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-12, 2)
+
+[node name="ShieldPart11" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(4, -26)
+
+[node name="ShieldPart12" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(-4, -26)
+
+[node name="ShieldPart13" parent="." instance=ExtResource("2_1rpqi")]
+position = Vector2(12, 16)

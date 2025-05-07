@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://b042k3cskeubw"]
+
+[ext_resource type="Texture2D" uid="uid://4ugmeijp7qx0" path="res://entities/explosion/alien-explode.png" id="1_0lj0v"]
+[ext_resource type="Script" uid="uid://dih3qf37bltec" path="res://entities/explosion/explosion.gd" id="2_vqvk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqvk3"]
+atlas = ExtResource("1_0lj0v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqcnx"]
+atlas = ExtResource("1_0lj0v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ondb"]
+atlas = ExtResource("1_0lj0v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr472"]
+atlas = ExtResource("1_0lj0v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e8ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqvk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqcnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ondb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr472")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0e8ph")
+frame_progress = 0.996769
+script = ExtResource("2_vqvk3")

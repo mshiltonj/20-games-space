@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://8cqbmv244mu8"]
+
+[ext_resource type="Script" uid="uid://bgtdxnernpvda" path="res://entities/ship/ship.gd" id="1_0i1q7"]
+[ext_resource type="Texture2D" uid="uid://d0fcilhyhctwc" path="res://entities/ship/ship.png" id="2_0i1q7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0i1q7"]
+radius = 13.0
+height = 48.0
+
+[node name="Ship" type="CharacterBody2D" groups=["aliens"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_0i1q7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+texture = ExtResource("2_0i1q7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0i1q7")

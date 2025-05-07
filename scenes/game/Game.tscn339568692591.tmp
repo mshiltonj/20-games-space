@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://dalvfnov2ethx"]
+
+[ext_resource type="Texture2D" uid="uid://ctqx2pj1kew68" path="res://icon.svg" id="1_m44fu"]
+[ext_resource type="Script" uid="uid://dpsljbpakv6c2" path="res://scenes/game/game.gd" id="1_vrspl"]
+[ext_resource type="PackedScene" uid="uid://deg7173fs7csd" path="res://entities/player/Player.tscn" id="2_vrspl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrspl"]
+size = Vector2(96, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m44fu"]
+size = Vector2(154, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qcb4"]
+size = Vector2(822, 43)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_vrspl")
+
+[node name="Background1" type="ColorRect" parent="."]
+offset_right = 797.0
+offset_bottom = 602.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftWall" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_right = 151.0
+offset_bottom = 602.0
+color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -118.0
+offset_top = 42.0
+offset_right = -78.0
+offset_bottom = 82.0
+
+[node name="RightWall" type="ColorRect" parent="."]
+offset_left = 650.0
+offset_top = 1.0
+offset_right = 800.0
+offset_bottom = 603.0
+color = Color(0.529412, 0.529412, 0.529412, 1)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 5.0
+offset_right = 644.0
+offset_bottom = 31.0
+text = "Score"
+
+[node name="ShieldGroup" type="Node2D" parent="."]
+
+[node name="Icon2" type="Sprite2D" parent="ShieldGroup"]
+position = Vector2(210, 484)
+scale = Vector2(0.242188, 0.421875)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon3" type="Sprite2D" parent="ShieldGroup"]
+position = Vector2(538, 483)
+scale = Vector2(0.242188, 0.421875)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon4" type="Sprite2D" parent="ShieldGroup"]
+position = Vector2(436, 484)
+scale = Vector2(0.242188, 0.421875)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon5" type="Sprite2D" parent="ShieldGroup"]
+position = Vector2(320, 483)
+scale = Vector2(0.242188, 0.421875)
+texture = ExtResource("1_m44fu")
+
+[node name="Aliens" type="Node2D" parent="."]
+
+[node name="Icon2" type="Sprite2D" parent="Aliens"]
+position = Vector2(199.25, 99.8397)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon3" type="Sprite2D" parent="Aliens"]
+position = Vector2(571, 104)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon4" type="Sprite2D" parent="Aliens"]
+position = Vector2(517, 101)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon5" type="Sprite2D" parent="Aliens"]
+position = Vector2(451, 101)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon6" type="Sprite2D" parent="Aliens"]
+position = Vector2(391, 103)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon7" type="Sprite2D" parent="Aliens"]
+position = Vector2(348, 105)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon8" type="Sprite2D" parent="Aliens"]
+position = Vector2(294, 101)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Icon9" type="Sprite2D" parent="Aliens"]
+position = Vector2(246, 101)
+scale = Vector2(0.214844, 0.192808)
+texture = ExtResource("1_m44fu")
+
+[node name="Player" parent="." instance=ExtResource("2_vrspl")]
+position = Vector2(307, 553)
+
+[node name="LeftWallBody" type="StaticBody2D" parent="."]
+
+[node name="LeftWallCollider" type="CollisionShape2D" parent="LeftWallBody"]
+position = Vector2(693, 530.5)
+shape = SubResource("RectangleShape2D_vrspl")
+
+[node name="RightWallBody" type="StaticBody2D" parent="."]
+
+[node name="RightWallCollider" type="CollisionShape2D" parent="RightWallBody"]
+position = Vector2(78, 530)
+shape = SubResource("RectangleShape2D_m44fu")
+
+[node name="BulletCollector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCollector"]
+position = Vector2(404, -35.5)
+shape = SubResource("RectangleShape2D_7qcb4")

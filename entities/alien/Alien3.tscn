@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd1660lmgs0xu"]
+
+[ext_resource type="Script" uid="uid://b8ndgtphvt2a5" path="res://entities/alien/alien.gd" id="1_6anlm"]
+[ext_resource type="Texture2D" uid="uid://ia14su2tercs" path="res://entities/alien/alien3.png" id="2_6anlm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cu05"]
+size = Vector2(30, 32)
+
+[node name="Alien3" type="CharacterBody2D" groups=["aliens"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_6anlm")
+points = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_6anlm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2cu05")
+
+[node name="FireBulletTimer" type="Timer" parent="."]

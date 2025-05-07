@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://drsp4kfiq6b68"]
+
+[ext_resource type="Script" uid="uid://dlnvaqmwry3jj" path="res://entities/alien-bullet/alien_bullet.gd" id="1_l24iw"]
+[ext_resource type="Texture2D" uid="uid://vevt12n2r3o8" path="res://entities/alien-bullet/alien-bullet.png" id="2_l24iw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l24iw"]
+size = Vector2(6, 12)
+
+[node name="AlienBullet" type="CharacterBody2D" groups=["alien_bullets"]]
+collision_layer = 16
+collision_mask = 7
+script = ExtResource("1_l24iw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_l24iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l24iw")
