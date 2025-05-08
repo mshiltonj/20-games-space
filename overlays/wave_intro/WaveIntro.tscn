@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://pedo02bkp3wv"]
+
+[ext_resource type="Script" uid="uid://cxroau0twgq6h" path="res://overlays/wave_intro/wave_intro.gd" id="1_uca1w"]
+[ext_resource type="FontFile" uid="uid://broid8c74c743" path="res://assets/fonts/Vipnagorgialla Bd.otf" id="2_ohcti"]
+
+[node name="WaveIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uca1w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 164
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 164
+theme_override_constants/margin_bottom = 96
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ohcti")
+theme_override_font_sizes/font_size = 56
+text = "WAVE 1"

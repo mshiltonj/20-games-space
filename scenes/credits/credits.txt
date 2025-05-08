@@ -1,0 +1,12 @@
+
+Game developed in Godot
+	https://godotengine.org/
+
+Images created in Aseprite
+	https://www.aseprite.org/
+
+Sound Effects created in JSFXR
+	https://sfxr.me/
+	
+Font used: Vipnagorgialla
+https://www.1001fonts.com/vipnagorgialla-font.html

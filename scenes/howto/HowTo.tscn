@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvsyrj6u2wg3h"]
+
+[ext_resource type="Script" uid="uid://ngiggb0xa12h" path="res://scenes/howto/how_to.gd" id="1_00jao"]
+[ext_resource type="FontFile" uid="uid://broid8c74c743" path="res://assets/fonts/Vipnagorgialla Bd.otf" id="2_vteru"]
+
+[node name="HowTo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_00jao")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.0941176, 0.101961, 0.223529, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 598.0
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 96
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScreenTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vteru")
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="HowToText" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Shoot aliens. 
+Avoid bombs. 
+Don't die.
+
+'A' Move Left
+'D' Move Right
+'J'  Fire "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vteru")
+text = "Back To Main"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

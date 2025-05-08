@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2aqvcqv64lc6"]
+
+[ext_resource type="Script" uid="uid://cps78nn1n7gdt" path="res://scenes/credits/credits.gd" id="1_677rg"]
+[ext_resource type="FontFile" uid="uid://jjxul07o4wgr" path="res://assets/fonts/Montalban.ttf" id="2_8vc4u"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_677rg")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.0941176, 0.101961, 0.223529, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 799.0
+offset_bottom = 97.0
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScreenTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8vc4u")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditsText" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(590, 0)
+layout_mode = 2
+text = "Credits loaded from credits.txt"
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8vc4u")
+text = " Main Menu "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MainMenu" to="." method="_on_main_menu_pressed"]

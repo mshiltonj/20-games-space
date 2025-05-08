@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://gcg3hmsypl0f"]
+
+[ext_resource type="Script" uid="uid://dqbnq82dyfcye" path="res://overlays/game_over/game_over.gd" id="1_w0i1o"]
+[ext_resource type="FontFile" uid="uid://broid8c74c743" path="res://assets/fonts/Vipnagorgialla Bd.otf" id="2_mocwr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0i1o"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0i1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 164
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 164
+theme_override_constants/margin_bottom = 96
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0i1o")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mocwr")
+theme_override_font_sizes/font_size = 42
+text = "Game Over"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_right = 56
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FinalScoreLabel" type="Label" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Final Score:"
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FinalScoreValue" type="Label" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/CenterContainer2"]
+layout_mode = 2
+text = "0	"
+
+[node name="PlayAgain" type="Button" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mocwr")
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mocwr")
+text = "Main Menu"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
