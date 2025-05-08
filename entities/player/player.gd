@@ -6,10 +6,20 @@ const BULLET : PackedScene = preload("res://entities/bullet/Bullet.tscn")
 const EXPLOSION : PackedScene = preload("res://entities/explosion/Explosion.tscn")
 
 @onready var bullet_timer : Timer = $BulletTimer
+@onready var invulnerability_timer : Timer = $InvulnerabilityTimer
+
 @onready var bullet_cooldown : bool = false
+
+func start_invulnerability() -> void:
+	modulate.a = 0.5
+	invulnerability_timer.start()
+	set_collision_layer_value(1, false)
+
 
 func _ready() -> void:
 	AudioManager.register("bullet_fire", load("res://entities/player/laserShoot.wav"))
+	AudioManager.register("player_died", load("res://entities/player/hitHurt.wav"))
+
 	bullet_timer.timeout.connect(func() -> void: bullet_cooldown = false )
 
 func _input(event : InputEvent) -> void:
@@ -45,5 +55,12 @@ func destroy() -> void:
 	queue_free()
 	splode.global_position = Vector2(self.global_position)
 	get_parent().get_parent().add_child(splode)
+	AudioManager.play("player_died")
+
 	Signals.player_destroyed.emit()
 	
+
+
+func _on_invulnerability_timer_timeout() -> void:
+	modulate.a = 1.0
+	set_collision_layer_value(1, true)

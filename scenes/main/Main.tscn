@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://q8al84q4dqgh"]
+[gd_scene load_steps=9 format=3 uid="uid://q8al84q4dqgh"]
 
 [ext_resource type="Script" uid="uid://bxovxfwapvaot" path="res://scenes/main/main.gd" id="1_u1xfj"]
+[ext_resource type="Texture2D" uid="uid://qmi044c2ltno" path="res://background.png" id="2_sjxhf"]
+[ext_resource type="FontFile" uid="uid://broid8c74c743" path="res://assets/fonts/Vipnagorgialla Bd.otf" id="3_sjxhf"]
+[ext_resource type="Texture2D" uid="uid://btiq14hr4dpn1" path="res://entities/alien/alien1.png" id="4_ostsq"]
+[ext_resource type="Texture2D" uid="uid://b4n5pnb81drgc" path="res://entities/alien/alien2.png" id="5_3km4f"]
+[ext_resource type="Texture2D" uid="uid://ia14su2tercs" path="res://entities/alien/alien3.png" id="6_qkm1d"]
+[ext_resource type="Texture2D" uid="uid://2wslv0vv21wy" path="res://entities/player/player.png" id="7_p5fgu"]
+
+[sub_resource type="FontVariation" id="FontVariation_sjxhf"]
+base_font = ExtResource("3_sjxhf")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,30 +20,90 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u1xfj")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_right = 804.0
-offset_bottom = 598.0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_sjxhf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 104.0
+offset_top = 432.0
+offset_right = 416.0
+offset_bottom = 572.0
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Space Alien Bombers"
-
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sjxhf")
 text = "Play"
 
-[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sjxhf")
 text = "Credits"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="HowTo" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sjxhf")
+text = "How To Play
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sjxhf")
 text = "Quit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Alien1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(216, 272)
+rotation = -0.198036
+scale = Vector2(2, 2)
+texture = ExtResource("4_ostsq")
+
+[node name="Alien2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(80, 176)
+rotation = -0.471406
+scale = Vector2(2, 2)
+texture = ExtResource("5_3km4f")
+
+[node name="Alien3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(248, 72)
+rotation = 0.265661
+scale = Vector2(2, 2)
+texture = ExtResource("6_qkm1d")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(648, 488)
+rotation = -0.744798
+scale = Vector2(3.90583, 3.90583)
+texture = ExtResource("7_p5fgu")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 90.0
+offset_right = 728.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.662745, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.662745, 0.729412, 1)
+theme_override_constants/line_spacing = -12
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 43
+theme_override_fonts/font = SubResource("FontVariation_sjxhf")
+theme_override_font_sizes/font_size = 100
+text = "Space
+Alien
+Bombers"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowTo" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

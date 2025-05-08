@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var sprite : Sprite2D = $Sprite2D 
 @onready var fire_bullet_timer : Timer = $FireBulletTimer
 @onready var fire_probability : float = 0.0010
+@onready var dead : bool = false
+
 const ALIEN_BULLET : PackedScene = preload("res://entities/alien-bullet/AlienBullet.tscn")
 const EXPLOSION : PackedScene = preload("res://entities/explosion/Explosion.tscn")
 
@@ -26,8 +28,9 @@ func fire_bullet_check() -> void:
 		
 func destroy() -> void:
 	var splode : Node2D = EXPLOSION.instantiate()
-	Signals.alien_destroyed.emit(self.points)
 	AudioManager.play("alien_destroy")
+	dead = true
 	queue_free()
+	Signals.alien_destroyed.emit(self.points)
 	splode.global_position = Vector2(self.global_position)
 	get_parent().get_parent().add_child(splode)

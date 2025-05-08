@@ -8,6 +8,17 @@ func _on_main_menu_pressed() -> void:
 	SceneManager.load_scene("Main", self)
 
 func load_credits_text() -> void:
-	var file : FileAccess = FileAccess.open("res://scenes/credits/credits.txt", FileAccess.READ)
-	var content : String = file.get_as_text()
-	credits_text_label.text = content
+
+	credits_text_label.text = """
+Game developed in Godot
+	https://godotengine.org/
+
+Images created in Aseprite
+	https://www.aseprite.org/
+
+Sound Effects created in JSFXR
+	https://sfxr.me/
+	
+Font used: Vipnagorgialla
+https://www.1001fonts.com/vipnagorgialla-font.html
+"""

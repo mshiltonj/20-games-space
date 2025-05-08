@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dalvfnov2ethx"]
+[gd_scene load_steps=14 format=3 uid="uid://dalvfnov2ethx"]
 
 [ext_resource type="Script" uid="uid://dpsljbpakv6c2" path="res://scenes/game/game.gd" id="1_vrspl"]
 [ext_resource type="PackedScene" uid="uid://c3c6kfn0562kw" path="res://entities/shield/Shield.tscn" id="2_7qcb4"]
@@ -6,7 +6,9 @@
 [ext_resource type="Shader" uid="uid://l40cvho2yva5" path="res://scenes/game/Background.gdshader" id="2_qf6a8"]
 [ext_resource type="PackedScene" uid="uid://deg7173fs7csd" path="res://entities/player/Player.tscn" id="2_vrspl"]
 [ext_resource type="Texture2D" uid="uid://qmi044c2ltno" path="res://background.png" id="2_wnrko"]
-[ext_resource type="PackedScene" uid="uid://gcg3hmsypl0f" path="res://overlays/game_over.tscn" id="7_gg4pt"]
+[ext_resource type="FontFile" uid="uid://broid8c74c743" path="res://assets/fonts/Vipnagorgialla Bd.otf" id="5_qf6a8"]
+[ext_resource type="PackedScene" uid="uid://gcg3hmsypl0f" path="res://overlays/game_over/GameOver.tscn" id="7_gg4pt"]
+[ext_resource type="PackedScene" uid="uid://pedo02bkp3wv" path="res://overlays/wave_intro/WaveIntro.tscn" id="8_wnrko"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_56wml"]
 shader = ExtResource("2_qf6a8")
@@ -50,11 +52,12 @@ offset_bottom = 603.0
 color = Color(0.529412, 0.529412, 0.529412, 1)
 
 [node name="Score" type="Label" parent="."]
-offset_left = 155.0
-offset_top = 5.0
-offset_right = 644.0
-offset_bottom = 31.0
-text = "Score"
+offset_left = 160.0
+offset_top = 6.0
+offset_right = 641.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("5_qf6a8")
+text = "Score: 0"
 
 [node name="ShieldGroup" type="Node2D" parent="."]
 
@@ -100,7 +103,6 @@ shape = SubResource("RectangleShape2D_7qcb4")
 
 [node name="MovementTimer" type="Timer" parent="."]
 wait_time = 0.7
-autostart = true
 
 [node name="ShipTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -114,10 +116,12 @@ offset_bottom = 553.0
 
 [node name="LivesGroup" type="Node2D" parent="."]
 
-[node name="InvincibleTimer" type="Timer" parent="."]
-
 [node name="Overlays" type="Node" parent="."]
 
 [node name="GameOver" parent="Overlays" node_paths=PackedStringArray("game") instance=ExtResource("7_gg4pt")]
 visible = false
 game = NodePath("../..")
+
+[node name="WaveIntro" parent="Overlays" node_paths=PackedStringArray("Game") instance=ExtResource("8_wnrko")]
+visible = false
+Game = NodePath("../..")
